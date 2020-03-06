@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<section class="header-description">
+    <div class="container ">
+    <h1>
+Web app ideas
+</h1>
+        <h4>“You don’t have to be great to start, but you have to start to be great.” –Zig Ziglar</h4>
+    </div>
+
+</section>
+
+
+</div>
+
+<div class="grid container pt-5">
+
+{% for idea in idea_list %}
+<div class="card">
+    <div class="card-body">
+        <h4><a href="{{idea.title | slugify}}">{{idea.title}}</a></h4>
+
+       <p>{{idea.description}}</p>
+
+        <div class="text-right">
+
+            <a class="ml-4 btn btn-outline-primary btn-primary" href="{{idea.title | slugify}}">View more</a>
+<br>
+<br>
+
+           <small class="text-muted">
+            {% if idea.number_of_submissions %} <i class="material-icons">face</i>
+            {{idea.number_of_submissions}} Submission{{ idea.numer_of_submissions|pluralize }}
+            {%endif%}
+           </small>
+ 
+        </div>
+
+    </div>
+</div>
+{% endfor %}
+</div>
+<style>
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+
+    }
+</style>
+{% endblock%}

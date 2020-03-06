@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+ {% load static %}
+ {% block title %} Home {% endblock %} 
+ {% block content %}
+<div class="hero-banner">
+  <div class="container">
+        <div class="row align-items-center text-center text-md-left">
+          <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
+            <h1>Learning by doing</h1>
+            <p>
+              A community-curated collection of ideas and there solutions to train
+              and practice development skills
+            </p>
+            <a class="btn btn-primary btn-lg" href="{% url 'idea-list'%} "
+              >Be inspired</a
+            >
+          </div>
+          <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
+            <img class="img-fluid" src="{% static 'images/student.png' %}" alt="" />
+          </div>
+        </div>
+    </div>
+</div>
+
+<section class="background-correct bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-10 col-sm-6 col-md-4 col-lg-3 m-auto m-md-0">
+        <img alt="image" class="img-fluid" src="{% static 'images/stack-man.svg' %}">
+      </div>
+
+      <div class="col-12 col-md-8 ml-auto pt-5 pt-md-0">
+        <h2>About</h2>
+        <p class="lead">
+          After endless hours of following tutorials, looking for inspiration always resulted in finding 'to-do' apps. This site aims to solve the problem and provide different ideas and inspiration for projects, regardless of language or capability. 
+        </p>
+        <p class="mt-4"><a class="btn btn-secondary" href="{% url 'idea-list' %}">
+        Find a project idea</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="background-correct" style="background-image: url( {% static 'images/grey.svg' %} );">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6 col-lg-5">
+        <img alt="image" class="icon" src="{% static 'images/discord.svg' %}">
+        <h3>Start a discussion</h3>
+        <p class="lead">Ask a question or talk about your new cat. Like minded people are only a click away. </p>
+        <a class="btn btn-secondary" href="{% url 'idea-list'%} "
+        >Join Discord</a
+      >
+      </div>
+      <div class="col-10 col-sm-6 m-auto col-md-4 pt-4">
+        <img alt="image" class="img-fluid rounded-0" src="{% static 'images/support-man.svg' %}">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

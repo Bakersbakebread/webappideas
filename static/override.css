@@ -1,0 +1,122 @@
+body{
+font-size: 16px;
+}
+a{
+color: #000;
+}
+
+.background-correct{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.bg-gray{
+    background-color: #fafafa
+}
+section{
+    padding: 3rem;
+}
+.page-content{
+    padding-top: 5rem;
+}
+
+img.icon {
+    width: auto;
+    width: 3.75rem;
+  }
+
+  img.icon-round {
+    width: auto;
+    width: 3.75rem;
+  }
+.hero-banner{
+font-size: 1.3rem;
+display: flex;
+}
+.hero-banner .row{
+    height: 100vh;
+}
+.row-100 {
+    height: 6.25rem;
+    width: 100%;
+  }
+
+  .row-50 {
+    height: 3.125rem;
+    width: 100%;
+  }
+
+  .row-70 {
+    height: 4.375rem;
+    width: 100%;
+  }
+
+.header-description {
+    padding: 70px 0;
+    text-align: center;
+    background:
+#fafafa;
+
+}
+
+
+
+.header-description h4 {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 300;
+    color:
+    #8f99ac;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.header-description h4::after {
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    margin-left: -18px;
+    content: '';
+    width: 36px;
+    border-bottom: 1px solid
+    #00b8d8;
+}
+.idea-detail{
+background-color: rgba(0, 123, 255, 0.1);
+}
+
+i.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  text-transform: none;
+  display: inline-block;
+  vertical-align: -3px;
+  letter-spacing: normal;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.icon{
+vertical-align: middle;
+}
+small{
+line-height: 1;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 10vw;
+    object-fit: cover;
+}

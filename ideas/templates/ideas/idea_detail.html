@@ -1,0 +1,66 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+<section class="header-description idea-detail">
+  <div class="container">
+    <div class="row text-left mb-3">
+      <div class="col-sm-6">
+        <h2>
+          {{ object.title }}
+        </h2>
+      </div>
+    </div>
+    <div class="row text-left text-dark">
+      <div class="col text-lg">
+        <p>
+          {{ object.description }}
+        </p>
+        <span class="text-muted">
+            <i class="material-icons">
+              access_time
+              </i>  {{object.author}} - {{ object.created_at | date}}
+            </span>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="container">
+  <div class="row">
+    <div class="col-sm-8 pt-4">
+      <h4>
+        Submissions
+      </h4>
+    </div>
+    <div class="col-12 col-sm-3 p-4">
+      <a href="{% url 'submission-add' object.slug%}" class="btn btn-block btn-success">Add your submission</a> 
+      </span>
+    </div>
+  </div>
+<div class="row">
+
+
+    <div class="col-6">
+    {% for submission in submissions %}
+    <div class="card">
+      <img class="card-img-top mh-10" src="{% static 'images/rocket.png'%}">
+      <div class="card-body">
+        <h6>
+        {{submission.author}} <br>
+        <small class="text-muted">
+          {{idea.created_at}}
+          </small>
+        </h6>
+
+        <p>
+          There can be content, there can also be no content...
+          
+        </p>
+        <a class="btn btn-outline-secondary" href="{{submission.url_to}}">{{submission.url_to}}</a>
+    
+     </div>
+    {% endfor %}
+  </div>
+  </div></div>
+</section>
+{% endblock %}
