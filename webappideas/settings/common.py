@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from socialauth.settings import AUTHENTICATION_BACKENDS
 
 LOGIN_URL = 'login'
@@ -28,18 +31,8 @@ SOCIAL_AUTH_GITHUB_PROFILE_EXTRA_PARAMS = {  # add this
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'gye5+(aaqr9^szh__!!(4_dv!z4d!2cxb2fs2tre&^)g$p+t$x'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ["d969ebe8.ngrok.io", "localhost"]
-
 
 # Application definition
 
@@ -87,20 +80,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'webappideas.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'webappideas',
-        'USER': 'postgres',
-        'PASSWORD': 'password',
-        'HOST': 'localhost'
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': os.getenv("DB_ENV")
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -120,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -133,7 +123,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
